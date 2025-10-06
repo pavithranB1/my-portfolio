@@ -30,8 +30,11 @@
       <h5>Hello, I'm</h5>
       <h1>PAVITHRAN</h1>
       <h3>Software Developer</h3>
-      <p>I’m a Fresher and Computer Science student with hands-on experience in web development, file conversion apps. Proficient in java, html ,css and javascript. Seeking an entry-level developer role to build scalable and user-friendly applications in IT service environment with immediate availability.</p>
-      <a href="https://docs.google.com/document/d/1sv8isMV9-akGrKhsIAuYThK_VAHjtcZQ/edit" class="btn">View Resume</a>
+      <p>
+        I’m a Fresher and Computer Science student with hands-on experience in web development and file conversion apps. 
+        I aim to build scalable, user-friendly applications and grow in a collaborative environment.
+      </p>
+      <a href="https://docs.google.com/document/d/1sv8isMV9-akGrKhsIAuYThK_VAHjtcZQ/edit" class="btn" target="_blank">View Resume</a>
     </div>
     <div class="hero-img">
       <img src="pavin img.jpg" alt="Profile Image">
@@ -53,19 +56,19 @@
   </section>
 
   <!-- ===== SKILLS SECTION ===== -->
- <div class="skills-container">
-  <div class="skill-card"><i class='bx bxl-html5'></i><p>HTML</p></div>
-  <div class="skill-card"><i class='bx bxl-css3'></i><p>CSS</p></div>
-  <div class="skill-card"><i class='bx bxl-javascript'></i><p>JavaScript</p></div>
-  <div class="skill-card"><i class='bx bxl-java'></i><p>Java</p></div>
-  <div class="skill-card"><i class='bx bx-data'></i><p>SQL</p></div>
-  <div class="skill-card"><i class='bx bxl-mongodb'></i><p>MongoDB</p></div>
-  <div class="skill-card"><i class='bx bxl-python'></i><p>Python</p></div>
-</div>
-
+  <section id="skills" class="skills">
+    <div class="skills-container">
+      <div class="skill-card"><i class='bx bxl-html5'></i><p>HTML</p></div>
+      <div class="skill-card"><i class='bx bxl-css3'></i><p>CSS</p></div>
+      <div class="skill-card"><i class='bx bxl-javascript'></i><p>JavaScript</p></div>
+      <div class="skill-card"><i class='bx bxl-java'></i><p>Java</p></div>
+      <div class="skill-card"><i class='bx bx-data'></i><p>SQL</p></div>
+      <div class="skill-card"><i class='bx bxl-mongodb'></i><p>MongoDB</p></div>
+      <div class="skill-card"><i class='bx bxl-python'></i><p>Python</p></div>
+    </div>
+  </section>
 
   <!-- ===== PROJECT SECTION ===== -->
-    <!-- ===== PROJECT SECTION ===== -->
   <section id="projects" class="projects">
     <h2>Featured <span>Projects</span></h2>
     <div class="project-container">
@@ -106,23 +109,42 @@
     </div>
   </section>
 
-
   <!-- ===== CONTACT SECTION ===== -->
-  <!-- ===== CONTACT SECTION ===== -->
-<!-- ===== CONTACT SECTION ===== -->
-<section id="contact" class="contact">
-  <h2>Contact <span>Me</span></h2>
-  <div class="contact-info">
-    <p><i class='bx bxs-phone'></i> <strong>Mobile:</strong> 8072494203</p>
-    <p><i class='bx bxs-envelope'></i> <strong>Email:</strong> pavithranb045@gmail.com</p>
-  </div>
-</section>
-
-
+  <section id="contact" class="contact">
+    <h2>Contact <span>Me</span></h2>
+    <div class="contact-info">
+      <p><i class='bx bxs-phone'></i> <strong>Mobile:</strong> 8072494203</p>
+      <p><i class='bx bxs-envelope'></i> <strong>Email:</strong> pavithranb045@gmail.com</p>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 pavithran | All Rights Reserved</p>
   </footer>
+
+  <!-- ===== Scroll Spy Script ===== -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navlist li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120; // adjust for header height
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
